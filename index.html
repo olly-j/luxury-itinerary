@@ -2,181 +2,304 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Exclusive Road Trip Itinerary: Daventry to Jávea via Strasbourg & Black Forest</title>
+  <title>Daventry to Jávea Luxury Road Trip</title>
+  
+  <!-- Google Fonts for Elegant Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" 
+    rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-papS1P6DlFfEf5VHXb+hFIZgV6AVnLx1oNNw0iqf9xjAcKfKnJfBC27ajjJ6Qv+q9x1P0NqK1Yn0k7G2ER6I3g==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+
+  <!-- Inline CSS for Styling -->
   <style>
-    body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
+    /* Reset and Base Styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
       color: #333;
+      background-color: #f4f4f4;
     }
 
+    /* Header Styles */
     header {
-      background: #e8e8e8;
-      padding: 20px;
+      background: url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGx1eHVyeSUyMHJlYWx8ZW58MHx8fHwxNjg4NjY3NTg0&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
+      color: #fff;
+      padding: 80px 20px;
       text-align: center;
+      position: relative;
     }
-
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
     header h1 {
-      margin: 0;
-      font-size: 1.8em;
-      color: #222;
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    header p {
+      font-size: 1.2em;
+      position: relative;
+      z-index: 2;
     }
 
+    /* Container */
     .container {
       width: 90%;
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fafafa;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
     }
 
-    h2, h3, h4 {
-      margin-top: 1.2em;
-      color: #2a2a2a;
-    }
-
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-
+    /* Intro Section */
     .intro {
-      margin-bottom: 2em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .intro p {
+      font-size: 1.1em;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
+    /* Tab Navigation */
     .tabs-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 2em;
+      gap: 15px;
+      margin-bottom: 30px;
+      justify-content: center;
     }
-
     .tab {
       flex: 1;
-      min-width: 120px;
+      min-width: 140px;
       text-align: center;
-      background: #f0f0f0;
-      padding: 10px;
+      background: #e0e0e0;
+      padding: 15px 20px;
       cursor: pointer;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-      transition: all 0.3s ease;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+      position: relative;
     }
-
     .tab:hover {
-      background: #e2e2e2;
+      background: #d5d5d5;
+      transform: translateY(-2px);
+    }
+    .tab.active {
+      background: #b0c4de;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .tab i {
+      display: block;
+      font-size: 1.5em;
+      margin-bottom: 5px;
     }
 
+    /* Tab Content */
     .tab-content {
       display: none;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      padding: 15px;
-      background: #fff;
+      animation: fadeIn 0.5s ease-in-out;
     }
-
     .tab-content.active {
       display: block;
     }
-
-    .day-title {
-      font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: #444;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
+    .tab-content h2 {
+      font-family: 'Playfair Display', serif;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #b0c4de;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .tab-content img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+    }
+    .tab-content h3 {
+      color: #555;
+      margin: 15px 0 10px;
+      display: flex;
+      align-items: center;
+    }
+    .tab-content h3 i {
+      margin-right: 8px;
+      color: #b0c4de;
+    }
     .details-list {
       list-style: none;
       padding-left: 0;
-      margin-bottom: 1.5em;
+      margin-bottom: 20px;
     }
-
     .details-list li {
-      margin-bottom: 0.5em;
-      padding-left: 20px;
       position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      font-size: 1em;
+      color: #555;
+      display: flex;
+      align-items: center;
     }
-
     .details-list li::before {
-      content: "•";
+      content: "";
       position: absolute;
       left: 0;
-      color: #a0a0a0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: #b0c4de;
+      border-radius: 50%;
     }
-
+    .details-list li i {
+      margin-right: 8px;
+      color: #b0c4de;
+      font-size: 1.2em;
+    }
     .hotel-highlight {
-      background: #f2f2f2;
-      border-left: 4px solid #999;
-      padding: 10px;
-      margin-bottom: 10px;
+      background: #f0f8ff;
+      border-left: 5px solid #b0c4de;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
       font-style: italic;
+      color: #333;
+      display: flex;
+      align-items: center;
     }
-
+    .hotel-highlight i {
+      margin-right: 10px;
+      color: #b0c4de;
+      font-size: 1.5em;
+    }
     .at-a-glance-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 2em;
-      margin-bottom: 2em;
+      margin: 30px 0;
     }
-
     .at-a-glance-table th,
     .at-a-glance-table td {
-      border: 1px solid #ccc;
-      padding: 10px;
+      border: 1px solid #ddd;
+      padding: 12px;
       text-align: center;
     }
-
     .at-a-glance-table th {
-      background: #eee;
+      background-color: #b0c4de;
+      color: #fff;
+      font-weight: bold;
+    }
+    .at-a-glance-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
     }
 
+    /* Footer */
     footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      margin-top: 2em;
-      padding: 20px;
       background: #e8e8e8;
+      padding: 20px;
+      text-align: center;
+      color: #777;
+      margin-top: 40px;
+      border-radius: 0 0 10px 10px;
     }
 
-    /* Simple JavaScript to toggle tabs */
-    .hidden { display: none; }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .tabs-container {
+        flex-direction: column;
+      }
+      .tab {
+        min-width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Header Section -->
   <header>
     <h1>Daventry to Jávea Luxury Road Trip</h1>
+    <p>A curated 6–8 day journey through Europe's finest destinations.</p>
   </header>
 
+  <!-- Main Container -->
   <div class="container">
-
-    <!-- INTRO SECTION -->
+    
+    <!-- Intro Section -->
     <section class="intro">
       <p>
-        A carefully curated 6–8 day driving journey through Europe, visiting the charming city of Strasbourg and the enchanting Black Forest region, culminating in the sunny coastal town of Jávea in Spain.
+        Embark on an unforgettable luxury road trip from Daventry (UK) to Jávea (Spain), traversing the enchanting city of <a href="https://en.wikipedia.org/wiki/Strasbourg" target="_blank" rel="noopener">Strasbourg</a> and the serene beauty of the <a href="https://en.wikipedia.org/wiki/Black_Forest" target="_blank" rel="noopener">Black Forest</a>. This meticulously planned itinerary ensures comfort, elegance, and unforgettable experiences at every stop.
       </p>
     </section>
 
-    <!-- TAB NAVIGATION -->
+    <!-- Tab Navigation -->
     <div class="tabs-container">
-      <div class="tab" onclick="showTabContent('overview')">Overview</div>
-      <div class="tab" onclick="showTabContent('day1')">Day 1</div>
-      <div class="tab" onclick="showTabContent('day2')">Day 2</div>
-      <div class="tab" onclick="showTabContent('day3')">Day 3</div>
-      <div class="tab" onclick="showTabContent('day4')">Day 4</div>
-      <div class="tab" onclick="showTabContent('day5')">Day 5</div>
-      <div class="tab" onclick="showTabContent('day6')">Day 6</div>
-      <div class="tab" onclick="showTabContent('options')">+ Options</div>
+      <div class="tab active" onclick="showTabContent('overview')">
+        <i class="fas fa-map-signs"></i> Overview
+      </div>
+      <div class="tab" onclick="showTabContent('day1')">
+        <i class="fas fa-calendar-day"></i> Day 1
+      </div>
+      <div class="tab" onclick="showTabContent('day2')">
+        <i class="fas fa-city"></i> Day 2
+      </div>
+      <div class="tab" onclick="showTabContent('day3')">
+        <i class="fas fa-spa"></i> Day 3
+      </div>
+      <div class="tab" onclick="showTabContent('day4')">
+        <i class="fas fa-water"></i> Day 4
+      </div>
+      <div class="tab" onclick="showTabContent('day5')">
+        <i class="fas fa-utensils"></i> Day 5
+      </div>
+      <div class="tab" onclick="showTabContent('day6')">
+        <i class="fas fa-flag-checkered"></i> Day 6
+      </div>
+      <div class="tab" onclick="showTabContent('options')">
+        <i class="fas fa-plus-circle"></i> + Options
+      </div>
     </div>
 
-    <!-- TAB CONTENT: OVERVIEW -->
+    <!-- Tab Content: Overview -->
     <div id="overview" class="tab-content active">
       <h2>Trip Overview</h2>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fGx1eHVyeSUyMHJlYWx8ZW58MHx8fHwxNjg4NjY3NTg0&ixlib=rb-4.0.3&q=80&w=1080" alt="Luxury Road Trip Overview">
       <table class="at-a-glance-table">
         <thead>
           <tr>
@@ -195,31 +318,31 @@
             <td>Strasbourg</td>
             <td>~8 hrs (incl. Eurotunnel)</td>
             <td>Reims lunch stop</td>
-            <td>Hotel Cour du Corbeau</td>
+            <td><a href="https://hotelcourducorbeau.com/" target="_blank" rel="noopener">Hotel Cour du Corbeau</a></td>
           </tr>
           <tr>
             <td>Day 2</td>
             <td>—</td>
             <td>Strasbourg</td>
             <td>N/A</td>
-            <td>Petite France,<br>Boat Tour, Cathedral</td>
+            <td>Petite France, Boat Tour, Cathedral</td>
             <td>Same as Day 1</td>
           </tr>
           <tr>
             <td>Day 3</td>
             <td>Strasbourg</td>
             <td>Black Forest</td>
-            <td>~1 hr + scenic drive</td>
-            <td>Baden-Baden,<br>Caracalla Spa</td>
-            <td>Brenners Park-Hotel &amp; Spa</td>
+            <td>~1 hr + Scenic Drive</td>
+            <td>Baden-Baden, Caracalla Spa</td>
+            <td><a href="https://www.brenners.com/en/hotel-spa" target="_blank" rel="noopener">Brenners Park-Hotel & Spa</a></td>
           </tr>
           <tr>
             <td>Day 4</td>
             <td>—</td>
             <td>Black Forest</td>
             <td>~1.5 hrs +1 hr</td>
-            <td>Triberg Falls,<br>Lake Titisee</td>
-            <td>Boutique Hotel Alemannenhof</td>
+            <td>Triberg Falls, Lake Titisee</td>
+            <td><a href="https://www.alemannenhof.com/" target="_blank" rel="noopener">Boutique Hotel Alemannenhof</a></td>
           </tr>
           <tr>
             <td>Day 5</td>
@@ -227,7 +350,7 @@
             <td>Avignon</td>
             <td>~6.5–7 hrs</td>
             <td>Basel/Lyon lunch stop</td>
-            <td>La Mirande</td>
+            <td><a href="https://www.lamirande-avignon.com/" target="_blank" rel="noopener">La Mirande</a></td>
           </tr>
           <tr>
             <td>Day 6</td>
@@ -235,237 +358,256 @@
             <td>Jávea</td>
             <td>~7 hrs</td>
             <td>Girona lunch stop</td>
-            <td>Parador de Jávea</td>
+            <td><a href="https://www.parador.es/en/paradores/parador-de-javea" target="_blank" rel="noopener">Parador de Jávea</a></td>
           </tr>
         </tbody>
       </table>
       <p>
-        <strong>Note:</strong> Optional days (Day 7–8) allow for extended stays in Jávea. This overview ensures each day is balanced between drive times, local exploration, and luxurious rest.
+        <strong>Note:</strong> Optional days (Day 7–8) allow for extended stays in Jávea, offering additional leisure and exploration opportunities.
       </p>
     </div>
 
-    <!-- TAB CONTENT: DAY 1 -->
+    <!-- Tab Content: Day 1 -->
     <div id="day1" class="tab-content">
-      <h2>Day 1: Daventry to Strasbourg</h2>
-      <h3>Drive Time</h3>
+      <h2>Day 1: Daventry &rarr; Strasbourg</h2>
+      <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDV8fGV1cm90dW5lbCUyMHJlbGF4fGVufDB8fHx8MTY4ODY2NzU4NA&ixlib=rb-4.0.3&q=80&w=1080" alt="Driving through Eurotunnel">
+      <h3><i class="fas fa-clock"></i> Drive Time</h3>
       <ul class="details-list">
-        <li>Daventry to Folkestone: ~2.5–3 hours</li>
-        <li>Eurotunnel Crossing: ~35 minutes + check-in</li>
-        <li>Calais to Strasbourg: ~5 hours</li>
+        <li><i class="fas fa-car"></i> <strong>Daventry to Folkestone:</strong> ~2.5–3 hours</li>
+        <li><i class="fas fa-tunnel"></i> <strong>Eurotunnel Crossing:</strong> ~35 minutes + check-in</li>
+        <li><i class="fas fa-road"></i> <strong>Calais to Strasbourg:</strong> ~5 hours</li>
       </ul>
-      <h3>Morning</h3>
+      <h3><i class="fas fa-moon"></i> Morning</h3>
       <ul class="details-list">
-        <li>Depart Daventry by 6:00 AM</li>
-        <li>Eurotunnel ~9:30–10:00 AM</li>
+        <li><i class="fas fa-departure-board"></i> Depart Daventry by <strong>6:00 AM</strong></li>
+        <li><i class="fas fa-ticket-alt"></i> Board Eurotunnel around <strong>9:30–10:00 AM</strong></li>
       </ul>
-      <h3>Lunch Stop</h3>
+      <h3><i class="fas fa-utensils"></i> Lunch Stop</h3>
       <ul class="details-list">
-        <li><strong>Reims</strong> – Try <em>Brasserie du Boulingrin</em> for classic French cuisine</li>
+        <li><strong>Reims</strong> – Enjoy classic French cuisine at <a href="https://www.brasserieduboulingrin.com/" target="_blank" rel="noopener"><em>Brasserie du Boulingrin</em></a></li>
       </ul>
-      <h3>Arrival</h3>
+      <h3><i class="fas fa-map-marker-alt"></i> Arrival</h3>
       <ul class="details-list">
-        <li>Arrive in Strasbourg by 5:00–6:00 PM</li>
-        <li>Check-in at <em>Hotel Cour du Corbeau Strasbourg MGallery</em></li>
+        <li><i class="fas fa-clock"></i> Reach Strasbourg by <strong>5:00–6:00 PM</strong></li>
+        <li><i class="fas fa-hotel"></i> Check-in at <a href="https://hotelcourducorbeau.com/" target="_blank" rel="noopener"><em>Hotel Cour du Corbeau Strasbourg MGallery</em></a></li>
       </ul>
       <div class="hotel-highlight">
-        <strong>Hotel:</strong> Hotel Cour du Corbeau Strasbourg MGallery <br>
-        A historic 4-star boutique hotel near Petite France
+        <i class="fas fa-hotel"></i> <strong>Hotel:</strong> <a href="https://hotelcourducorbeau.com/" target="_blank" rel="noopener">Hotel Cour du Corbeau Strasbourg MGallery</a><br>
+        A historic 4-star boutique hotel near <a href="https://en.wikipedia.org/wiki/Petite_France_(Strasbourg)" target="_blank" rel="noopener">Petite France</a>, offering luxurious accommodations and exceptional service.
       </div>
-      <h3>Evening in Strasbourg</h3>
+      <h3><i class="fas fa-sun"></i> Evening in Strasbourg</h3>
       <ul class="details-list">
-        <li>Explore <strong>Petite France District</strong></li>
-        <li>Enjoy Alsatian dinner at <em>Le Clou</em> or <em>Chez Yvonne</em></li>
+        <li><i class="fas fa-tree"></i> Stroll through the picturesque <strong><a href="https://en.wikipedia.org/wiki/Petite_France_(Strasbourg)" target="_blank" rel="noopener">Petite France District</a></strong></li>
+        <li><i class="fas fa-utensils"></i> Dine at <a href="https://www.leclou-strasbourg.com/" target="_blank" rel="noopener"><em>Le Clou</em></a> or <a href="https://www.chezyvonne.com/" target="_blank" rel="noopener"><em>Chez Yvonne</em></a>, savoring traditional Alsatian dishes like <strong>tarte flambée</strong></li>
       </ul>
     </div>
 
-    <!-- TAB CONTENT: DAY 2 -->
+    <!-- Tab Content: Day 2 -->
     <div id="day2" class="tab-content">
-      <h2>Day 2: Full Day in Strasbourg</h2>
-      <h3>Sights & Activities</h3>
+      <h2>Day 2: Exploring Strasbourg</h2>
+      <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDh8fHN0cmFzc2J1cmcnMjBjYXRoZWRyYWx8ZW58MHx8fHwxNjg4NjY3NTg0&ixlib=rb-4.0.3&q=80&w=1080" alt="Strasbourg Cathedral">
+      <h3><i class="fas fa-landmark"></i> Sights &amp; Activities</h3>
       <ul class="details-list">
-        <li><strong>Strasbourg Cathedral</strong> – Climb the tower for panoramic views</li>
-        <li><strong>Batorama Boat Tour</strong> – Scenic canal ride</li>
-        <li><strong>Orangerie Park</strong> – Relaxing green space</li>
-        <li>European Parliament area – Modern architectural contrast</li>
+        <li><i class="fas fa-certificate"></i> <strong><a href="https://en.wikipedia.org/wiki/Strasbourg_Cathedral" target="_blank" rel="noopener">Strasbourg Cathedral</a>:</strong> Climb to the tower for panoramic city views</li>
+        <li><i class="fas fa-ship"></i> <strong><a href="https://batorama.com/" target="_blank" rel="noopener">Batorama Boat Tour</a>:</strong> Glide along the River Ill, enjoying scenic vistas</li>
+        <li><i class="fas fa-tree"></i> <strong><a href="https://en.wikipedia.org/wiki/Orangerie_(Strasbourg)" target="_blank" rel="noopener">Orangerie Park</a>:</strong> Perfect for a leisurely morning stroll amidst beautiful gardens</li>
+        <li><i class="fas fa-building"></i> <strong><a href="https://www.europarl.europa.eu/portal/en" target="_blank" rel="noopener">European Parliament</a>:</strong> Admire modern architecture and the significance of this landmark</li>
       </ul>
-      <h3>Dining</h3>
+      <h3><i class="fas fa-utensils"></i> Lunch</h3>
       <ul class="details-list">
-        <li><strong>Lunch:</strong> Au Pont Corbeau (authentic Alsatian ambiance)</li>
-        <li><strong>Dinner:</strong> Enjoy local wines (Riesling, Gewürztraminer) and dine at <em>Chez Yvonne</em> or <em>Le Clou</em></li>
+        <li><a href="https://aupontcorbeau.com/" target="_blank" rel="noopener"><em>Au Pont Corbeau</em></a> – Delight in an authentic Alsatian ambiance with exquisite local dishes</li>
+      </ul>
+      <h3><i class="fas fa-shopping-bag"></i> Afternoon</h3>
+      <ul class="details-list">
+        <li><i class="fas fa-shopping-basket"></i> Visit local markets to browse fresh produce, cheeses, and artisanal goods</li>
+        <li><i class="fas fa-paint-brush"></i> Optional museum visit: <a href="https://en.wikipedia.org/wiki/Mus%C3%A9e_Alsacien" target="_blank" rel="noopener"><strong>Musée Alsacien</strong></a> – Discover regional folklore and traditional furnishings</li>
+      </ul>
+      <h3><i class="fas fa-wine-bottle"></i> Evening</h3>
+      <ul class="details-list">
+        <li><i class="fas fa-glass-cheers"></i> Indulge in a local wine tasting session, featuring Alsatian <a href="https://en.wikipedia.org/wiki/Riesling_(wine)" target="_blank" rel="noopener"><strong>Riesling</strong></a> and <a href="https://en.wikipedia.org/wiki/Gew%C3%BCrztraminer" target="_blank" rel="noopener"><strong>Gewürztraminer</strong></a></li>
+        <li><i class="fas fa-utensils"></i> Dine at <a href="https://www.chezyvonne.com/" target="_blank" rel="noopener"><em>Chez Yvonne</em></a> or <a href="https://www.leclou-strasbourg.com/" target="_blank" rel="noopener"><em>Le Clou</em></a>, enjoying refined Alsatian cuisine</li>
       </ul>
       <div class="hotel-highlight">
-        <strong>Hotel:</strong> Continue at Hotel Cour du Corbeau <br>
-        Perfectly situated for sightseeing and dining.
+        <i class="fas fa-hotel"></i> <strong>Hotel:</strong> Continue your stay at <a href="https://hotelcourducorbeau.com/" target="_blank" rel="noopener">Hotel Cour du Corbeau Strasbourg MGallery</a>, perfectly situated for evening strolls and dining.
       </div>
     </div>
 
-    <!-- TAB CONTENT: DAY 3 -->
+    <!-- Tab Content: Day 3 -->
     <div id="day3" class="tab-content">
-      <h2>Day 3: Strasbourg to the Black Forest (Baden-Baden &amp; Beyond)</h2>
-      <h3>Drive Time</h3>
+      <h2>Day 3: Strasbourg &rarr; Black Forest</h2>
+      <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGJhZGVuLWJhZGVuJTIwc3BhfGVufDB8fHx8MTY4ODY2NzU4NA&ixlib=rb-4.0.3&q=80&w=1080" alt="Baden-Baden Spa">
+      <h3><i class="fas fa-clock"></i> Drive Time</h3>
       <ul class="details-list">
-        <li>Strasbourg to Baden-Baden: ~1 hour</li>
-        <li>Afternoon scenic drive on the Schwarzwaldhochstraße (B500)</li>
+        <li><i class="fas fa-car-side"></i> <strong>Strasbourg to Baden-Baden:</strong> ~1 hour</li>
+        <li><i class="fas fa-route"></i> <strong>Afternoon Scenic Drive:</strong> Schwarzwaldhochstraße (B500)</li>
       </ul>
-      <h3>Morning</h3>
+      <h3><i class="fas fa-spa"></i> Morning in Baden-Baden</h3>
       <ul class="details-list">
-        <li>Depart by 9:00 AM</li>
-        <li><strong>Baden-Baden:</strong> Caracalla Spa or Friedrichsbad</li>
+        <li><i class="fas fa-departure-board"></i> Depart Strasbourg by <strong>9:00 AM</strong></li>
+        <li><i class="fas fa-bath"></i> Relax at <strong><a href="https://www.caracalla-spa.de/en/" target="_blank" rel="noopener">Caracalla Spa</a></strong> or <strong><a href="https://www.friedrichsbad.de/" target="_blank" rel="noopener">Friedrichsbad</a></strong>, renowned for their therapeutic thermal baths</li>
       </ul>
-      <h3>Lunch</h3>
+      <h3><i class="fas fa-utensils"></i> Lunch</h3>
       <ul class="details-list">
-        <li>Consider <em>Brenners Park-Hotel</em> bistro for an upscale meal</li>
+        <li>Dine at <a href="https://www.brenners.com/en/hotel-spa" target="_blank" rel="noopener"><em>Brenners Park-Hotel Bistro</em></a>, offering an upscale meal with local produce</li>
       </ul>
-      <h3>Afternoon Scenic Route</h3>
+      <h3><i class="fas fa-route"></i> Afternoon Scenic Drive</h3>
       <ul class="details-list">
-        <li>Drive along the B500</li>
-        <li>Stop at <strong>Mummelsee</strong> – short lake walk, souvenir shopping</li>
+        <li>Continue along the <strong><a href="https://en.wikipedia.org/wiki/Schwarzwaldhochstra%C3%9Fe" target="_blank" rel="noopener">Schwarzwaldhochstraße (B500)</a></strong>, one of Germany's most scenic routes</li>
+        <li>Stop at <strong><a href="https://en.wikipedia.org/wiki/Mummelsee" target="_blank" rel="noopener">Mummelsee</a></strong> – Enjoy a short lakeside walk and browse for unique Black Forest souvenirs</li>
       </ul>
       <div class="hotel-highlight">
-        <strong>Hotel Options:</strong><br>
-        1) Brenners Park-Hotel &amp; Spa in Baden-Baden (<em>iconic luxury</em>)<br>
-        2) Hotel Dollenberg if you prefer deeper Black Forest serenity
+        <i class="fas fa-hotel"></i> <strong>Hotel Options:</strong><br>
+        1) <a href="https://www.brenners.com/en/hotel-spa" target="_blank" rel="noopener"><em>Brenners Park-Hotel & Spa</em></a> in Baden-Baden – Iconic luxury with extensive spa facilities.<br>
+        2) <a href="https://www.hotel-dollenberg.de/en/" target="_blank" rel="noopener"><em>Hotel Dollenberg</em></a> in Bad Peterstal-Griesbach – Secluded wellness retreat with panoramic views.
       </div>
-      <h3>Evening</h3>
+      <h3><i class="fas fa-utensils"></i> Evening</h3>
       <ul class="details-list">
-        <li>Michelin-starred dining at <em>Brenners Park-Restaurant</em></li>
-        <li>Enjoy the hotel spa or stroll local trails</li>
+        <li>Experience Michelin-starred dining at <a href="https://www.brenners.com/en/restaurants" target="_blank" rel="noopener"><em>Brenners Park-Restaurant</em></a> for a refined culinary experience</li>
+        <li>Alternatively, enjoy gourmet cuisine at <a href="https://www.restauranterestaurantbareiss.de/" target="_blank" rel="noopener"><em>Restaurant Bareiss</em></a> in Baiersbronn</li>
       </ul>
     </div>
 
-    <!-- TAB CONTENT: DAY 4 -->
+    <!-- Tab Content: Day 4 -->
     <div id="day4" class="tab-content">
-      <h2>Day 4: Black Forest Exploration (Triberg &amp; Titisee)</h2>
-      <h3>Drive Times</h3>
+      <h2>Day 4: Black Forest Exploration</h2>
+      <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fGJsYWNrLWZvcmVzdCUyMGZhbGxzfGVufDB8fHx8MTY4ODY2NzU4NA&ixlib=rb-4.0.3&q=80&w=1080" alt="Triberg Waterfalls">
+      <h3><i class="fas fa-clock"></i> Drive Times</h3>
       <ul class="details-list">
-        <li>Baden-Baden to Triberg: ~1.5 hours</li>
-        <li>Triberg to Titisee: ~1 hour</li>
+        <li><i class="fas fa-car-side"></i> <strong>Baden-Baden to Triberg:</strong> ~1.5 hours</li>
+        <li><i class="fas fa-car-side"></i> <strong>Triberg to Titisee:</strong> ~1 hour</li>
       </ul>
-      <h3>Morning</h3>
+      <h3><i class="fas fa-water"></i> Morning</h3>
       <ul class="details-list">
-        <li><strong>Triberg Waterfalls</strong> – Germany’s highest accessible falls</li>
-        <li>World’s largest cuckoo clock at Eble Uhren-Park</li>
+        <li><i class="fas fa-water"></i> Visit the breathtaking <strong><a href="https://en.wikipedia.org/wiki/Triberg_Waterfalls" target="_blank" rel="noopener">Triberg Waterfalls</a></strong>, Germany’s highest accessible falls</li>
+        <li><i class="fas fa-clock"></i> Explore the <strong><a href="https://www.eble-uhren-park.de/" target="_blank" rel="noopener">Eble Uhren-Park</a></strong> – Home to the world’s largest cuckoo clock</li>
       </ul>
-      <h3>Lunch in Triberg</h3>
+      <h3><i class="fas fa-utensils"></i> Lunch</h3>
       <ul class="details-list">
-        <li><em>Bergseestüble</em> – Hearty Black Forest specialties</li>
+        <li>Dine at <a href="https://www.bergseestueble.de/" target="_blank" rel="noopener"><em>Bergseestüble</em></a>, known for its hearty Black Forest specialties</li>
       </ul>
-      <h3>Afternoon</h3>
+      <h3><i class="fas fa-water"></i> Afternoon</h3>
       <ul class="details-list">
-        <li>Drive to <strong>Lake Titisee</strong></li>
-        <li>Relax lakeside, rent a pedal boat, or sample Black Forest cake</li>
+        <li>Drive to <strong><a href="https://www.titisee.de/" target="_blank" rel="noopener">Lake Titisee</a></strong> for a relaxing afternoon</li>
+        <li>Options include a pedal boat ride, lakeside cafés, or sampling the famous <strong>Black Forest cake</strong></li>
       </ul>
       <div class="hotel-highlight">
-        <strong>Hotel:</strong> Boutique Hotel Alemannenhof <br>
-        Cozy lakeside property near Titisee with excellent views.
+        <i class="fas fa-hotel"></i> <strong>Hotel:</strong> <a href="https://www.alemannenhof.com/" target="_blank" rel="noopener"><em>Boutique Hotel Alemannenhof</em></a><br>
+        A cozy lakeside property near Titisee, offering picturesque views and exceptional comfort.
       </div>
-      <h3>Evening</h3>
+      <h3><i class="fas fa-utensils"></i> Evening</h3>
       <ul class="details-list">
-        <li>Dinner at the hotel restaurant or local eateries in Titisee-Neustadt</li>
+        <li>Dine at the hotel’s restaurant or explore local eateries in <a href="https://en.wikipedia.org/wiki/Titisee-Neustadt" target="_blank" rel="noopener"><strong>Titisee-Neustadt</strong></a>, savoring Black Forest trout</li>
       </ul>
     </div>
 
-    <!-- TAB CONTENT: DAY 5 -->
+    <!-- Tab Content: Day 5 -->
     <div id="day5" class="tab-content">
-      <h2>Day 5: Black Forest to Avignon</h2>
-      <h3>Drive Time</h3>
+      <h2>Day 5: Black Forest &rarr; Avignon</h2>
+      <img src="https://images.unsplash.com/photo-1522107172024-89f9f0a3c853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDl8fGF2aWdub24lMjBjYXRpZm9ufGVufDB8fHx8MTY4ODY2NzU4NA&ixlib=rb-4.0.3&q=80&w=1080" alt="Avignon France">
+      <h3><i class="fas fa-clock"></i> Drive Time</h3>
       <ul class="details-list">
-        <li>~6.5–7 hours</li>
+        <li><strong>~6.5–7 hours</strong></li>
       </ul>
-      <h3>Possible Stops</h3>
+      <h3><i class="fas fa-map-marker-alt"></i> Possible Stops</h3>
       <ul class="details-list">
-        <li><strong>Basel (Switzerland)</strong> for a quick city &amp; Rhine break</li>
-        <li><strong>Lyon (France)</strong> for gastronomic delights</li>
+        <li><strong><a href="https://en.wikipedia.org/wiki/Basel" target="_blank" rel="noopener">Basel, Switzerland</a></strong> – Quick city and Rhine River views</li>
+        <li><strong><a href="https://en.wikipedia.org/wiki/Lyon" target="_blank" rel="noopener">Lyon, France</a></strong> – Renowned for its gastronomic delights</li>
       </ul>
-      <h3>Lunch</h3>
+      <h3><i class="fas fa-utensils"></i> Lunch</h3>
       <ul class="details-list">
-        <li>If via Lyon: <em>Le Bouchon des Cordeliers</em> for traditional Lyonnaise cuisine</li>
+        <li>If stopping in <strong><a href="https://en.wikipedia.org/wiki/Lyon" target="_blank" rel="noopener">Lyon</a></strong>: Enjoy traditional Lyonnaise cuisine at <a href="https://www.bouchon-des-cordeliers.com/" target="_blank" rel="noopener"><em>Le Bouchon des Cordeliers</em></a></li>
       </ul>
-      <h3>Arrival in Avignon</h3>
+      <h3><i class="fas fa-map-marker-alt"></i> Arrival</h3>
       <ul class="details-list">
-        <li>Reach by ~4:00–5:00 PM</li>
-        <li>Check-in at <em>La Mirande</em>, a historic luxury hotel near Palais des Papes</li>
+        <li><i class="fas fa-clock"></i> Reach Avignon by <strong>4:00–5:00 PM</strong></li>
+        <li><i class="fas fa-hotel"></i> Check-in at <a href="https://www.lamirande-avignon.com/" target="_blank" rel="noopener"><em>La Mirande</em></a>, a historic luxury hotel near <a href="https://en.wikipedia.org/wiki/Palais_des_Papes" target="_blank" rel="noopener">Palais des Papes</a></li>
       </ul>
       <div class="hotel-highlight">
-        <strong>Hotel:</strong> La Mirande <br>
-        Refined Provençal style, renowned dining, steps from Avignon’s top sights.
+        <i class="fas fa-hotel"></i> <strong>Hotel:</strong> <a href="https://www.lamirande-avignon.com/" target="_blank" rel="noopener">La Mirande</a><br>
+        Timeless Provençal elegance with an acclaimed dining experience, steps away from Avignon’s top sights.
       </div>
-      <h3>Evening</h3>
+      <h3><i class="fas fa-moon"></i> Evening</h3>
       <ul class="details-list">
-        <li>Tour the <strong>Palais des Papes</strong> (check closing times)</li>
-        <li>Walk across the <strong>Pont d’Avignon</strong></li>
-        <li>Dinner in the hotel’s restaurant or a nearby Provençal bistro</li>
+        <li><i class="fas fa-church"></i> Tour the magnificent <strong><a href="https://en.wikipedia.org/wiki/Palais_des_Papes" target="_blank" rel="noopener">Palais des Papes</a></strong> (check closing times)</li>
+        <li><i class="fas fa-walking"></i> Stroll across the iconic <strong><a href="https://en.wikipedia.org/wiki/Pont_d%E2%80%99Avignon" target="_blank" rel="noopener">Pont d’Avignon</a></strong>, perfect for sunset photos</li>
+        <li><i class="fas fa-utensils"></i> Dine at <a href="https://www.lamirande-avignon.com/restaurants-bars/lamirande-restaurant/" target="_blank" rel="noopener"><em>La Mirande’s restaurant</em></a> or a nearby Provençal bistro, enjoying regional specialties</li>
       </ul>
     </div>
 
-    <!-- TAB CONTENT: DAY 6 -->
+    <!-- Tab Content: Day 6 -->
     <div id="day6" class="tab-content">
-      <h2>Day 6: Avignon to Jávea</h2>
-      <h3>Drive Time</h3>
+      <h2>Day 6: Avignon &rarr; Jávea</h2>
+      <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDl8fG1lZGl0ZXJuZWFuJTIwYmVhY2h8ZW58MHx8fHwxNjg4NjY3NTg0&ixlib=rb-4.0.3&q=80&w=1080" alt="Mediterranean Coast near Jávea">
+      <h3><i class="fas fa-clock"></i> Drive Time</h3>
       <ul class="details-list">
-        <li>~7 hours</li>
+        <li><strong>~7 hours</strong></li>
       </ul>
-      <h3>Possible Stops</h3>
+      <h3><i class="fas fa-map-marker-alt"></i> Possible Stops</h3>
       <ul class="details-list">
-        <li><strong>Montpellier</strong> or <strong>Narbonne</strong> – Quick coffee breaks</li>
-        <li><strong>Girona</strong> (3.5 hrs from Avignon) – Medieval charm and fantastic restaurants</li>
+        <li><strong><a href="https://en.wikipedia.org/wiki/Montpellier" target="_blank" rel="noopener">Montpellier</a></strong> or <strong><a href="https://en.wikipedia.org/wiki/Narbonne" target="_blank" rel="noopener">Narbonne</a></strong> – Quick coffee or stretch break</li>
+        <li><strong><a href="https://en.wikipedia.org/wiki/Girona" target="_blank" rel="noopener">Girona, Spain</a></strong> (~3.5 hrs from Avignon) – Experience medieval charm and fantastic restaurants</li>
       </ul>
-      <h3>Lunch</h3>
+      <h3><i class="fas fa-utensils"></i> Lunch</h3>
       <ul class="details-list">
-        <li><em>Bionbo Café Gastrobar</em> or <em>Le Bistrot</em> in Girona for top-rated local fare</li>
+        <li>In <strong><a href="https://en.wikipedia.org/wiki/Girona" target="_blank" rel="noopener">Girona</a></strong>: Savor top-rated local fare at <a href="https://www.bionbocafe.com/" target="_blank" rel="noopener"><em>Bionbo Café Gastrobar</em></a> or <a href="https://lebistrotgirona.com/" target="_blank" rel="noopener"><em>Le Bistrot</em></a></li>
       </ul>
-      <h3>Arrival in Jávea</h3>
+      <h3><i class="fas fa-map-marker-alt"></i> Arrival</h3>
       <ul class="details-list">
-        <li>Arrive by late afternoon (4:00–5:00 PM)</li>
+        <li><i class="fas fa-clock"></i> Arrive by late afternoon (4:00–5:00 PM)</li>
       </ul>
       <div class="hotel-highlight">
-        <strong>Hotel:</strong> Parador de Jávea <br>
-        A classic Spanish coastal property with lush gardens and sea views.
+        <i class="fas fa-hotel"></i> <strong>Hotel:</strong> <a href="https://www.parador.es/en/paradores/parador-de-javea" target="_blank" rel="noopener">Parador de Jávea</a><br>
+        A classic Spanish coastal retreat with lush gardens and stunning sea views, offering luxurious accommodations.
       </div>
-      <h3>Evening</h3>
+      <h3><i class="fas fa-sun"></i> Evening</h3>
       <ul class="details-list">
-        <li>Stroll along <strong>Arenal Beach</strong></li>
-        <li>Dine at <em>La Perla de Jávea</em> or <em>Restaurante Tosca</em> for exquisite seafood</li>
+        <li><i class="fas fa-walking"></i> Take a leisurely walk along <strong><a href="https://en.wikipedia.org/wiki/Arenal_Beach_(Jávea)" target="_blank" rel="noopener">Arenal Beach</a></strong>, enjoying the sunset and vibrant beachside atmosphere</li>
+        <li><i class="fas fa-utensils"></i> Dine at <a href="https://www.laperladejavea.com/" target="_blank" rel="noopener"><em>La Perla de Jávea</em></a> or <a href="https://restaurante-tosca.com/" target="_blank" rel="noopener"><em>Restaurante Tosca</em></a>, known for exquisite seafood and Mediterranean specialties</li>
       </ul>
     </div>
 
-    <!-- TAB CONTENT: OPTIONS -->
+    <!-- Tab Content: Options -->
     <div id="options" class="tab-content">
-      <h2>Optional Day 7–8 in Jávea</h2>
+      <h2>Optional Days 7–8: Leisure in Jávea</h2>
+      <img src="https://images.unsplash.com/photo-1523642599388-c32a941d763c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGphdmVhJTIwY29hc3R8ZW58MHx8fHwxNjg4NjY3NTg0&ixlib=rb-4.0.3&q=80&w=1080" alt="Jávea Coastal Views">
       <ul class="details-list">
-        <li>
-          <strong>Montgó Natural Park</strong>: Hike with stunning coastal panoramas.
-        </li>
-        <li>
-          <strong>Old Town Jávea</strong>: Explore medieval streets, markets, and charming tapas bars.
-        </li>
-        <li>
-          Nearby day trips to <strong>Moraira</strong> or <strong>Denia</strong> for additional beaches and waterfront dining.
-        </li>
+        <li><i class="fas fa-hiking"></i> <strong><a href="https://www.xn--montg-naturalpark-wc0h.com/en/" target="_blank" rel="noopener">Montgó Natural Park</a></strong>: Enjoy gentle hiking trails with panoramic sea and mountain vistas</li>
+        <li><i class="fas fa-city"></i> <strong>Old Town Jávea:</strong> Explore historic streets, visit charming churches, and indulge in tapas at local bars</li>
+        <li><i class="fas fa-ship"></i> Nearby day trips to <strong><a href="https://en.wikipedia.org/wiki/Moraira" target="_blank" rel="noopener">Moraira</a></strong> or <strong><a href="https://en.wikipedia.org/wiki/Denia" target="_blank" rel="noopener">Denia</a></strong> for additional beaches and waterfront dining</li>
       </ul>
-      <h3>Note:</h3>
+      <h3><i class="fas fa-hotel"></i> Accommodation Tips:</h3>
       <p>
-        Extend your stay at Parador de Jávea or consider the <em>Nomad Hotel</em> (boutique property with a rooftop bar) if you prefer a change of scenery.
+        Extend your stay at <a href="https://www.parador.es/en/paradores/parador-de-javea" target="_blank" rel="noopener"><em>Parador de Jávea</em></a> for continued luxury or consider the <a href="https://www.nomadhoteljavea.com/" target="_blank" rel="noopener"><em>Nomad Hotel</em></a> (a boutique property with a chic rooftop bar) for a stylish change of scenery.
       </p>
     </div>
 
-  </div><!-- end .container -->
+  </div><!-- End of Container -->
 
+  <!-- Footer -->
   <footer>
     <p>
-      <em>Safe travels and enjoy this luxury journey. For further customization, please let us know!</em>
+      <em>Safe travels and enjoy this exquisite journey. For further customizations, please let us know!</em>
     </p>
   </footer>
 
+  <!-- JavaScript for Tab Functionality -->
   <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
     function showTabContent(tabId) {
-      const allContents = document.querySelectorAll('.tab-content');
-      allContents.forEach(content => {
+      // Remove active class from all tabs and contents
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+      contents.forEach(content => {
         content.classList.remove('active');
       });
+
+      // Add active class to selected tab and corresponding content
+      document.querySelector(`.tab[onclick="showTabContent('${tabId}')"]`).classList.add('active');
       document.getElementById(tabId).classList.add('active');
     }
   </script>
-
 </body>
 </html>
