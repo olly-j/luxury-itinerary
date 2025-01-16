@@ -19,44 +19,250 @@
     crossorigin="anonymous" 
     referrerpolicy="no-referrer" 
   />
-  
-  <!-- AOS CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="leaflet.css">
-  
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- Responsive and Theme Styles -->
+
+  <!-- Inline CSS for Styling -->
   <style>
-    /* Include any additional inline styles here if necessary */
+    /* Reset and Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    /* Header Styles */
+    header {
+      background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHJvYWQlMjB0cmFwJTIwYnJhbmR8ZW58MHx8fHwxNjg4NjY3NTg0&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    header p {
+      font-size: 1.2em;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    /* Intro Section */
+    .intro {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .intro p {
+      font-size: 1.1em;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Tab Navigation */
+    .tabs-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    .tab {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      background: #e0e0e0;
+      padding: 15px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+      position: relative;
+    }
+    .tab:hover {
+      background: #d5d5d5;
+      transform: translateY(-2px);
+    }
+    .tab.active {
+      background: #b0c4de;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .tab i {
+      display: block;
+      font-size: 1.5em;
+      margin-bottom: 5px;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .tab-content h2 {
+      font-family: 'Playfair Display', serif;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #b0c4de;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .tab-content img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+    }
+    .tab-content h3 {
+      color: #555;
+      margin: 15px 0 10px;
+      display: flex;
+      align-items: center;
+    }
+    .tab-content h3 i {
+      margin-right: 8px;
+      color: #b0c4de;
+    }
+    .details-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+    .details-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      font-size: 1em;
+      color: #555;
+      display: flex;
+      align-items: center;
+    }
+    .details-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: #b0c4de;
+      border-radius: 50%;
+    }
+    .details-list li i {
+      margin-right: 8px;
+      color: #b0c4de;
+      font-size: 1.2em;
+    }
+    .hotel-highlight {
+      background: #f0f8ff;
+      border-left: 5px solid #b0c4de;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      font-style: italic;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
+    .hotel-highlight i {
+      margin-right: 10px;
+      color: #b0c4de;
+      font-size: 1.5em;
+    }
+    .at-a-glance-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+    }
+    .at-a-glance-table th,
+    .at-a-glance-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    .at-a-glance-table th {
+      background-color: #b0c4de;
+      color: #fff;
+      font-weight: bold;
+    }
+    .at-a-glance-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Footer */
+    footer {
+      background: #e8e8e8;
+      padding: 20px;
+      text-align: center;
+      color: #777;
+      margin-top: 40px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .tabs-container {
+        flex-direction: column;
+      }
+      .tab {
+        min-width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Loading Spinner -->
-  <div id="loading-spinner">
-    <div class="spinner"></div>
-  </div>
-  
   <!-- Header Section -->
   <header>
     <h1>Daventry to Jávea Luxury Road Trip</h1>
     <p>A curated 6–8 day journey through Europe's finest destinations.</p>
-    
-    <!-- Dark Mode Toggle -->
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">
-      <i class="fas fa-moon"></i>
-    </button>
   </header>
 
   <!-- Main Container -->
   <div class="container">
     
     <!-- Intro Section -->
-    <section class="intro" data-aos="fade-up">
+    <section class="intro">
       <p>
         Embark on an unforgettable luxury road trip from Daventry (UK) to Jávea (Spain), traversing the enchanting city of <a href="https://en.wikipedia.org/wiki/Strasbourg" target="_blank" rel="noopener">Strasbourg</a> and the serene beauty of the <a href="https://en.wikipedia.org/wiki/Black_Forest" target="_blank" rel="noopener">Black Forest</a>. This meticulously planned itinerary ensures comfort, elegance, and unforgettable experiences at every stop.
       </p>
@@ -64,41 +270,37 @@
 
     <!-- Tab Navigation -->
     <div class="tabs-container">
-      <div class="tab active" onclick="showTabContent('overview')" data-aos="zoom-in">
+      <div class="tab active" onclick="showTabContent('overview')">
         <i class="fas fa-map-signs"></i> Overview
       </div>
-      <div class="tab" onclick="showTabContent('day1')" data-aos="zoom-in">
+      <div class="tab" onclick="showTabContent('day1')">
         <i class="fas fa-calendar-day"></i> Day 1
       </div>
-      <div class="tab" onclick="showTabContent('day2')" data-aos="zoom-in">
+      <div class="tab" onclick="showTabContent('day2')">
         <i class="fas fa-city"></i> Day 2
       </div>
-      <div class="tab" onclick="showTabContent('day3')" data-aos="zoom-in">
+      <div class="tab" onclick="showTabContent('day3')">
         <i class="fas fa-spa"></i> Day 3
       </div>
-      <div class="tab" onclick="showTabContent('day4')" data-aos="zoom-in">
+      <div class="tab" onclick="showTabContent('day4')">
         <i class="fas fa-water"></i> Day 4
       </div>
-      <div class="tab" onclick="showTabContent('day5')" data-aos="zoom-in">
+      <div class="tab" onclick="showTabContent('day5')">
         <i class="fas fa-utensils"></i> Day 5
       </div>
-      <div class="tab" onclick="showTabContent('day6')" data-aos="zoom-in">
+      <div class="tab" onclick="showTabContent('day6')">
         <i class="fas fa-flag-checkered"></i> Day 6
       </div>
-      <div class="tab" onclick="showTabContent('options')" data-aos="zoom-in">
+      <div class="tab" onclick="showTabContent('options')">
         <i class="fas fa-plus-circle"></i> + Options
       </div>
     </div>
 
     <!-- Tab Content: Overview -->
-    <div id="overview" class="tab-content active" data-aos="fade-in">
+    <div id="overview" class="tab-content active">
       <h2>Trip Overview</h2>
-      <img src="YOUR_OVERVIEW_IMAGE_URL" alt="Luxury Road Trip Overview" data-aos="fade-up">
-      
-      <!-- Interactive Map -->
-      <div id="map" data-aos="zoom-in"></div>
-      
-      <table class="at-a-glance-table" data-aos="fade-up">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fGx1eHVyeSUyMHJlYWx8ZW58MHx8fHwxNjg4NjY3NTg0&ixlib=rb-4.0.3&q=80&w=1080" alt="Luxury Road Trip Overview">
+      <table class="at-a-glance-table">
         <thead>
           <tr>
             <th>Day</th>
@@ -166,9 +368,9 @@
     </div>
 
     <!-- Tab Content: Day 1 -->
-    <div id="day1" class="tab-content" data-aos="fade-up">
+    <div id="day1" class="tab-content">
       <h2>Day 1: Daventry &rarr; Strasbourg</h2>
-      <img src="https://www.kentonline.co.uk/_media/img/JCH4NEBGUE8FH1FGDQBE.jpg" alt="Driving through Eurotunnel" data-aos="fade-up">
+      <img src="https://www.kentonline.co.uk/_media/img/JCH4NEBGUE8FH1FGDQBE.jpg" alt="Driving through Eurotunnel">
       <h3><i class="fas fa-clock"></i> Drive Time</h3>
       <ul class="details-list">
         <li><i class="fas fa-car-side"></i> <strong>Daventry to Folkestone:</strong> ~2.5–3 hours</li>
@@ -201,9 +403,9 @@
     </div>
 
     <!-- Tab Content: Day 2 -->
-    <div id="day2" class="tab-content" data-aos="fade-up">
+    <div id="day2" class="tab-content">
       <h2>Day 2: Exploring Strasbourg</h2>
-      <img src="https://i.natgeofe.com/n/49f4e89f-ecec-488b-b37b-4912639798d0/ST_insideguide_GettyImages-1406600256_HR.jpg" alt="Strasbourg Cathedral" data-aos="fade-up">
+      <img src="https://i.natgeofe.com/n/49f4e89f-ecec-488b-b37b-4912639798d0/ST_insideguide_GettyImages-1406600256_HR.jpg" alt="Strasbourg Cathedral">
       <h3><i class="fas fa-landmark"></i> Sights &amp; Activities</h3>
       <ul class="details-list">
         <li><i class="fas fa-certificate"></i> <strong><a href="https://en.wikipedia.org/wiki/Strasbourg_Cathedral" target="_blank" rel="noopener">Strasbourg Cathedral</a>:</strong> Climb to the tower for panoramic city views</li>
@@ -231,9 +433,9 @@
     </div>
 
     <!-- Tab Content: Day 3 -->
-    <div id="day3" class="tab-content" data-aos="fade-up">
+    <div id="day3" class="tab-content">
       <h2>Day 3: Strasbourg &rarr; Black Forest</h2>
-      <img src="https://img.freepik.com/premium-photo/black-bmw-car-driving-down-road-woods_951962-3438.jpg" alt="Baden-Baden Spa" data-aos="fade-up">
+      <img src="https://img.freepik.com/premium-photo/black-bmw-car-driving-down-road-woods_951962-3438.jpg" alt="Baden-Baden Spa">
       <h3><i class="fas fa-clock"></i> Drive Time</h3>
       <ul class="details-list">
         <li><i class="fas fa-car-side"></i> <strong>Strasbourg to Baden-Baden:</strong> ~1 hour</li>
@@ -266,9 +468,9 @@
     </div>
 
     <!-- Tab Content: Day 4 -->
-    <div id="day4" class="tab-content" data-aos="fade-up">
+    <div id="day4" class="tab-content">
       <h2>Day 4: Black Forest Exploration</h2>
-      <img src="https://www.new7wonders.com/app/uploads/black-forest-1476021_1920-1920x1280.jpg" alt="Triberg Waterfalls" data-aos="fade-up">
+      <img src="https://www.new7wonders.com/app/uploads/sites/4/2016/09/black-forest-1476021_1920-1920x1280.jpg" alt="Triberg Waterfalls">
       <h3><i class="fas fa-clock"></i> Drive Times</h3>
       <ul class="details-list">
         <li><i class="fas fa-car-side"></i> <strong>Baden-Baden to Triberg:</strong> ~1.5 hours</li>
@@ -299,9 +501,9 @@
     </div>
 
     <!-- Tab Content: Day 5 -->
-    <div id="day5" class="tab-content" data-aos="fade-up">
+    <div id="day5" class="tab-content">
       <h2>Day 5: Black Forest &rarr; Avignon</h2>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Signalisation_bilingue_Avignon_-_Avignoun.JPG/2560px-Signalisation_bilingue_Avignon_-_Avignoun.JPG" alt="Avignon France" data-aos="fade-up">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Signalisation_bilingue_Avignon_-_Avignoun.JPG/2560px-Signalisation_bilingue_Avignon_-_Avignoun.JPG" alt="Avignon France">
       <h3><i class="fas fa-clock"></i> Drive Time</h3>
       <ul class="details-list">
         <li><strong>~6.5–7 hours</strong></li>
@@ -333,9 +535,9 @@
     </div>
 
     <!-- Tab Content: Day 6 -->
-    <div id="day6" class="tab-content" data-aos="fade-up">
+    <div id="day6" class="tab-content">
       <h2>Day 6: Avignon &rarr; Jávea</h2>
-      <img src="https://avignon-tourisme.com/app/uploads/avignon/2023/04/thumbs/Vue-du-Pont-dAvignon-et-du-Palais-des-Papes-par-drone-1920x960.jpg" alt="Mediterranean Coast near Jávea" data-aos="fade-up">
+      <img src="https://avignon-tourisme.com/app/uploads/avignon/2023/04/thumbs/Vue-du-Pont-dAvignon-et-du-Palais-des-Papes-par-drone-1920x960.jpg" alt="Mediterranean Coast near Jávea">
       <h3><i class="fas fa-clock"></i> Drive Time</h3>
       <ul class="details-list">
         <li><strong>~7 hours</strong></li>
@@ -365,9 +567,9 @@
     </div>
 
     <!-- Tab Content: Options -->
-    <div id="options" class="tab-content" data-aos="fade-up">
+    <div id="options" class="tab-content">
       <h2>Optional Days 7–8: Leisure in Jávea</h2>
-      <img src="https://www.olea-home.com/objetos/temp/source/oleahome/olea-home-noticias_66682cf1160c8-source.jpg" alt="Jávea Coastal Views" data-aos="fade-up">
+      <img src="https://www.olea-home.com/objetos/temp/source/oleahome/olea-home-noticias_66682cf1160c8-source.jpg" alt="Jávea Coastal Views">
       <ul class="details-list">
         <li><i class="fas fa-hiking"></i> <strong><a href="https://www.xn--montg-naturalpark-wc0h.com/en/" target="_blank" rel="noopener">Montgó Natural Park</a></strong>: Enjoy gentle hiking trails with panoramic sea and mountain vistas</li>
         <li><i class="fas fa-city"></i> <strong>Old Town Jávea:</strong> Explore historic streets, visit charming churches, and indulge in tapas at local bars</li>
@@ -377,46 +579,7 @@
       <p>
         Extend your stay at <a href="https://www.parador.es/en/paradores/parador-de-javea" target="_blank" rel="noopener"><em>Parador de Jávea</em></a> for continued luxury or consider the <a href="https://www.nomadhoteljavea.com/" target="_blank" rel="noopener"><em>Nomad Hotel</em></a> (a boutique property with a chic rooftop bar) for a stylish change of scenery.
       </p>
-      
-      <!-- Testimonials Section -->
-      <section class="testimonials-section" data-aos="fade-up">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-carousel">
-          <div class="testimonial">
-            <p>"An unforgettable journey with impeccable service and stunning locations!"</p>
-            <h4>— Jane Doe</h4>
-          </div>
-          <div class="testimonial">
-            <p>"Luxury at every turn. Highly recommended for a premium travel experience."</p>
-            <h4>— John Smith</h4>
-          </div>
-          <!-- Add more testimonials as needed -->
-        </div>
-      </section>
     </div>
-
-    <!-- Contact Section -->
-    <section class="contact-section" data-aos="fade-up">
-      <h2>Contact Us</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required placeholder="Your Name">
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="_replyto" required placeholder="Your Email">
-        </div>
-        <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
-        </div>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </section>
-
-    <!-- Testimonials Section (Alternative Placement) -->
-    <!-- If you prefer placing testimonials here, you can remove it from the Options tab -->
 
   </div><!-- End of Container -->
 
@@ -427,27 +590,6 @@
     </p>
   </footer>
 
-  <!-- Leaflet JS -->
-  <script src="leaflet.js"></script>
-  
-  <!-- AOS JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Whether animation should happen only once
-    });
-  </script>
-
-  <!-- Carousel Script -->
-  <script src="carousel.js"></script>
-  
-  <!-- Theme Toggle Script -->
-  <script src="theme-toggle.js"></script>
-  
-  <!-- Loading Spinner Script -->
-  <script src="loading-spinner.js"></script>
-  
   <!-- JavaScript for Tab Functionality -->
   <script>
     const tabs = document.querySelectorAll('.tab');
