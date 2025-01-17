@@ -105,27 +105,31 @@
 
     /* Tab Navigation */
     .tabs-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 40px;
-      justify-content: center;
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 5px; /* Reduce spacing */
+  margin-bottom: 20px;
+  justify-content: space-between;
+  overflow: visible; /* Prevent scrolling */
+  width: 100%;
     }
-    .tab {
-      flex: 1;
-      min-width: 150px;
-      text-align: center;
-      background: #f0f0f0;
-      padding: 20px 25px;
-      cursor: pointer;
-      border-radius: 8px;
-      font-weight: 500;
-      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+.tab {
+  flex: 1 1 auto; /* Allow dynamic resizing */
+  min-width: auto; /* Adjust width dynamically */
+  text-align: center;
+  background: #f0f0f0;
+  padding: 15px 10px; /* Reduce padding to fit more tabs */
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  display: flex;
+  flex-direction: row; /* Keep text and icon aligned horizontally */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Prevent text wrapping */
+}
     .tab:hover {
       background: #e0e0e0;
       transform: translateY(-3px);
@@ -137,10 +141,10 @@
       transform: translateY(-3px);
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
-    .tab i {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
+.tab i {
+  font-size: 1.2em; /* Reduce icon size */
+  margin-right: 5px; /* Adjust spacing */
+}
 
     /* Tab Content */
     .tab-content {
@@ -384,6 +388,7 @@
     </section>
 
     <!-- Tab Navigation -->
+
     <div class="tabs-container" role="tablist">
       <div class="tab active" onclick="showTabContent('overview')" role="tab" aria-selected="true" aria-controls="overview" tabindex="0">
         <i class="fas fa-map-signs"></i> Overview
