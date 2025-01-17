@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>Daventry to Jávea Luxury Road Trip</title>
   
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Embark on a curated 6–8 day luxury road trip from Daventry (UK) to Jávea (Spain), exploring Strasbourg and the Black Forest. Experience comfort, elegance, and unforgettable destinations.">
+  <meta name="keywords" content="Luxury Road Trip, Daventry to Jávea, Strasbourg, Black Forest, European Travel, High-End Itinerary">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- Google Fonts for Elegant Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,23 +28,23 @@
   <!-- Inline CSS for Styling -->
   <style>
     /* Reset and Base Styles */
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
     body {
       font-family: 'Roboto', sans-serif;
       line-height: 1.6;
       color: #333;
-      background-color: #f4f4f4;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
     }
 
     /* Header Styles */
     header {
       background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHJvYWQlMjB0cmFwJTIwYnJhbmR8ZW58MHx8fHwxNjg4NjY3NTg0&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
       color: #fff;
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
       position: relative;
     }
@@ -55,73 +60,86 @@
     }
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      margin-bottom: 10px;
+      font-size: 3.5em;
+      margin-bottom: 15px;
       position: relative;
       z-index: 2;
+      line-height: 1.2;
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.3em;
       position: relative;
       z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     /* Container */
     .container {
       width: 90%;
       max-width: 1200px;
-      margin: 30px auto;
-      padding: 30px;
+      margin: 40px auto;
+      padding: 40px;
       background: #fff;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
     }
 
     /* Intro Section */
     .intro {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       text-align: center;
     }
     .intro p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #555;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
+      line-height: 1.8;
     }
 
     /* Tab Navigation */
     .tabs-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 30px;
+      gap: 20px;
+      margin-bottom: 40px;
       justify-content: center;
     }
     .tab {
       flex: 1;
-      min-width: 140px;
+      min-width: 150px;
       text-align: center;
-      background: #e0e0e0;
-      padding: 15px 20px;
+      background: #f0f0f0;
+      padding: 20px 25px;
       cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .tab:hover {
-      background: #d5d5d5;
-      transform: translateY(-2px);
+      background: #e0e0e0;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .tab.active {
-      background: #b0c4de;
+      background: #0071e3;
       color: #fff;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
     .tab i {
-      display: block;
-      font-size: 1.5em;
-      margin-bottom: 5px;
+      font-size: 1.8em;
+      margin-bottom: 10px;
     }
 
     /* Tab Content */
@@ -140,42 +158,53 @@
     .tab-content h2 {
       font-family: 'Playfair Display', serif;
       color: #2a2a2a;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #b0c4de;
+      margin-bottom: 25px;
+      border-bottom: 3px solid #0071e3;
       display: inline-block;
-      padding-bottom: 5px;
+      padding-bottom: 8px;
+      font-size: 2.5em;
     }
     .tab-content img {
       width: 100%;
-      max-height: 400px;
+      max-height: 450px;
       object-fit: cover;
       border-radius: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ddd;
+      margin-bottom: 25px;
+      border: 2px solid #ddd;
+      transition: transform 0.3s ease;
+    }
+    .tab-content img:hover {
+      transform: scale(1.02);
     }
     .tab-content h3 {
       color: #555;
-      margin: 15px 0 10px;
+      margin: 20px 0 15px;
       display: flex;
       align-items: center;
+      font-size: 1.6em;
     }
     .tab-content h3 i {
-      margin-right: 8px;
-      color: #b0c4de;
+      margin-right: 10px;
+      color: #0071e3;
+      font-size: 1.5em;
     }
     .details-list {
       list-style: none;
       padding-left: 0;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     .details-list li {
       position: relative;
-      padding-left: 25px;
-      margin-bottom: 10px;
-      font-size: 1em;
+      padding-left: 30px;
+      margin-bottom: 15px;
+      font-size: 1.05em;
       color: #555;
       display: flex;
       align-items: center;
+      transition: color 0.3s;
+    }
+    .details-list li:hover {
+      color: #0071e3;
     }
     .details-list li::before {
       content: "";
@@ -183,63 +212,107 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      width: 8px;
-      height: 8px;
-      background: #b0c4de;
+      width: 10px;
+      height: 10px;
+      background: #0071e3;
       border-radius: 50%;
     }
     .details-list li i {
-      margin-right: 8px;
-      color: #b0c4de;
+      margin-right: 12px;
+      color: #0071e3;
       font-size: 1.2em;
     }
     .hotel-highlight {
-      background: #f0f8ff;
-      border-left: 5px solid #b0c4de;
-      padding: 15px;
-      margin-bottom: 20px;
+      background: #eef6ff;
+      border-left: 5px solid #0071e3;
+      padding: 20px;
+      margin-bottom: 25px;
       border-radius: 5px;
       font-style: italic;
       color: #333;
       display: flex;
       align-items: center;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hotel-highlight:hover {
+      background: #ddeaff;
+      transform: translateY(-2px);
     }
     .hotel-highlight i {
-      margin-right: 10px;
-      color: #b0c4de;
-      font-size: 1.5em;
+      margin-right: 15px;
+      color: #0071e3;
+      font-size: 1.8em;
     }
     .at-a-glance-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 30px 0;
+      margin: 40px 0;
+      overflow-x: auto;
     }
     .at-a-glance-table th,
     .at-a-glance-table td {
       border: 1px solid #ddd;
-      padding: 12px;
+      padding: 15px;
       text-align: center;
+      font-size: 1em;
     }
     .at-a-glance-table th {
-      background-color: #b0c4de;
+      background-color: #0071e3;
       color: #fff;
       font-weight: bold;
     }
     .at-a-glance-table tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
+      background-color: #f2f2f2;
     }
 
     /* Footer */
     footer {
-      background: #e8e8e8;
-      padding: 20px;
+      background: #f0f0f0;
+      padding: 25px 20px;
       text-align: center;
       color: #777;
-      margin-top: 40px;
-      border-radius: 0 0 10px 10px;
+      margin-top: 50px;
+      border-radius: 0 0 15px 15px;
+    }
+    footer p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .social-links a {
+      color: #777;
+      font-size: 1.5em;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .social-links a:hover {
+      color: #0071e3;
+      transform: scale(1.2);
     }
 
     /* Responsive Design */
+    @media (max-width: 992px) {
+      .tab-content h2 {
+        font-size: 2em;
+      }
+      .tab-content h3 {
+        font-size: 1.4em;
+      }
+      .details-list li {
+        font-size: 1em;
+      }
+      .hotel-highlight {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hotel-highlight i {
+        margin-bottom: 10px;
+      }
+    }
+
     @media (max-width: 768px) {
       .tabs-container {
         flex-direction: column;
@@ -247,8 +320,31 @@
       .tab {
         min-width: 100%;
       }
-      .tab-content iframe {
-        height: 250px;
+      .map-container iframe {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .tab-content h2 {
+        font-size: 1.8em;
+      }
+      .tab-content h3 {
+        font-size: 1.2em;
+      }
+      .details-list li {
+        font-size: 0.95em;
+      }
+      .at-a-glance-table th,
+      .at-a-glance-table td {
+        padding: 10px;
+        font-size: 0.9em;
       }
     }
 
@@ -259,9 +355,13 @@
     }
     .map-container iframe {
       width: 100%;
-      height: 400px;
+      height: 450px;
       border: 0;
       border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .map-container iframe:hover {
+      transform: scale(1.02);
     }
   </style>
 </head>
@@ -284,46 +384,47 @@
     </section>
 
     <!-- Tab Navigation -->
-    <div class="tabs-container">
-      <div class="tab active" onclick="showTabContent('overview')">
+    <div class="tabs-container" role="tablist">
+      <div class="tab active" onclick="showTabContent('overview')" role="tab" aria-selected="true" aria-controls="overview" tabindex="0">
         <i class="fas fa-map-signs"></i> Overview
       </div>
-      <div class="tab" onclick="showTabContent('day1')">
+      <div class="tab" onclick="showTabContent('day1')" role="tab" aria-selected="false" aria-controls="day1" tabindex="-1">
         <i class="fas fa-calendar-day"></i> Day 1
       </div>
-      <div class="tab" onclick="showTabContent('day2')">
+      <div class="tab" onclick="showTabContent('day2')" role="tab" aria-selected="false" aria-controls="day2" tabindex="-1">
         <i class="fas fa-city"></i> Day 2
       </div>
-      <div class="tab" onclick="showTabContent('day3')">
+      <div class="tab" onclick="showTabContent('day3')" role="tab" aria-selected="false" aria-controls="day3" tabindex="-1">
         <i class="fas fa-spa"></i> Day 3
       </div>
-      <div class="tab" onclick="showTabContent('day4')">
+      <div class="tab" onclick="showTabContent('day4')" role="tab" aria-selected="false" aria-controls="day4" tabindex="-1">
         <i class="fas fa-water"></i> Day 4
       </div>
-      <div class="tab" onclick="showTabContent('day5')">
+      <div class="tab" onclick="showTabContent('day5')" role="tab" aria-selected="false" aria-controls="day5" tabindex="-1">
         <i class="fas fa-utensils"></i> Day 5
       </div>
-      <div class="tab" onclick="showTabContent('day6')">
+      <div class="tab" onclick="showTabContent('day6')" role="tab" aria-selected="false" aria-controls="day6" tabindex="-1">
         <i class="fas fa-flag-checkered"></i> Day 6
       </div>
-      <div class="tab" onclick="showTabContent('options')">
+      <div class="tab" onclick="showTabContent('options')" role="tab" aria-selected="false" aria-controls="options" tabindex="-1">
         <i class="fas fa-plus-circle"></i> + Options
       </div>
     </div>
 
     <!-- Tab Content: Overview -->
-    <div id="overview" class="tab-content active">
+    <div id="overview" class="tab-content active" role="tabpanel" aria-labelledby="overview-tab">
       <h2>Trip Overview</h2>
-      <!-- Replaced Image with Overview Map -->
+      <!-- Overview Map -->
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d11550613.170605673!2d-7.056087529449933!3d45.02545492285434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e0!4m5!1s0x487713f8ac10f391%3A0x91fd50fb5f283ab5!2sDaventry!3m2!1d52.256027499999995!2d-1.1625942!4m5!1s0x4796c8495e18b2c1%3A0x971a483118e7241f!2sStrasbourg%2C%20France!3m2!1d48.5734053!2d7.752111299999999!4m5!1s0x4790ec232f1791bd%3A0xdbe2bec8ae87edf1!2sBlack%20Forest%2C%20Germany!3m2!1d48.2774862!2d8.185997!4m5!1s0x12b5eb8739bc9d07%3A0xe6429b6efa1d7b36!2sAvignon%2C%20France!3m2!1d43.9486986!2d4.8059401!4m5!1s0x129e0f99e86a8b1d%3A0x6c7e7e5bf95e3de7!2zSsOhdmVhLCBTcGFpbg!3m2!1d38.788913199999996!2d0.1660573!5e0!3m2!1sen!2suk!4v1737049906076!5m2!1sen!2suk" 
           width="100%" 
-          height="400" 
+          height="450" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade" 
+          aria-label="Trip Route Map">
         </iframe>
       </div>
       <table class="at-a-glance-table">
@@ -394,18 +495,19 @@
     </div>
 
     <!-- Tab Content: Day 1 -->
-    <div id="day1" class="tab-content">
+    <div id="day1" class="tab-content" role="tabpanel" aria-labelledby="day1-tab">
       <h2>Day 1: Daventry &rarr; Strasbourg</h2>
-      <!-- Replaced Image with Day 1 Map -->
+      <!-- Day 1 Map -->
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2604960.0713212015!2d0.6599688201395709!3d50.38694487166999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x487713f8ac10f391%3A0x91fd50fb5f283ab5!2sDaventry!3m2!1d52.256027499999995!2d-1.1625942!4m5!1s0x4796c8495e18b2c1%3A0x971a483118e7241f!2sStrasbourg%2C%20France!3m2!1d48.5734053!2d7.752111299999999!5e0!3m2!1sen!2suk!4v1737049976948!5m2!1sen!2suk" 
           width="100%" 
-          height="400" 
+          height="450" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade" 
+          aria-label="Day 1 Route Map">
         </iframe>
       </div>
       <h3><i class="fas fa-clock"></i> Drive Time</h3>
@@ -437,22 +539,22 @@
         <li><i class="fas fa-tree"></i> Stroll through the picturesque <strong><a href="https://www.visitstrasbourg.fr/en/discover/must-see-attractions/petite-france/" target="_blank" rel="noopener">Petite France District</a></strong></li>
         <li><i class="fas fa-utensils"></i> Dine at <a href="https://www.leclou-strasbourg.com/" target="_blank" rel="noopener"><em>Le Clou</em></a> or <a href="https://www.chezyvonne.com/" target="_blank" rel="noopener"><em>Chez Yvonne</em></a>, savoring traditional Alsatian dishes like <strong>tarte flambée</strong></li>
       </ul>
-
     </div>
 
     <!-- Tab Content: Day 2 -->
-    <div id="day2" class="tab-content">
+    <div id="day2" class="tab-content" role="tabpanel" aria-labelledby="day2-tab">
       <h2>Day 2: Exploring Strasbourg</h2>
-      <!-- Replaced Image with Day 2 Map -->
+      <!-- Day 2 Map -->
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d8786.327682340121!2d7.7430840632433595!3d48.581290351982865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sThings%20to%20do!5e0!3m2!1sen!2suk!4v1737115125272!5m2!1sen!2suk" 
           width="100%" 
-          height="400" 
+          height="450" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade" 
+          aria-label="Day 2 Route Map">
         </iframe>
       </div>
       <h3><i class="fas fa-landmark"></i> Sights &amp; Activities</h3>
@@ -479,22 +581,22 @@
       <div class="hotel-highlight">
         <i class="fas fa-hotel"></i> <strong>Hotel:</strong> Continue your stay at <a href="https://www.hotelcourducorbeau.com/en/" target="_blank" rel="noopener">Hotel Cour du Corbeau Strasbourg MGallery</a>, perfectly situated for evening strolls and dining.
       </div>
-
     </div>
 
     <!-- Tab Content: Day 3 -->
-    <div id="day3" class="tab-content">
+    <div id="day3" class="tab-content" role="tabpanel" aria-labelledby="day3-tab">
       <h2>Day 3: Strasbourg &rarr; Black Forest</h2>
-      <!-- Replaced Image with Day 3 Map -->
+      <!-- Day 3 Map -->
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d169442.0257667588!2d7.776701448712409!3d48.42713516946437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x4796c8495e18b2c1%3A0x971a483118e7241f!2sStrasbourg%2C%20France!3m2!1d48.5734053!2d7.752111299999999!4m5!1s0x4790ec232f1791bd%3A0xdbe2bec8ae87edf1!2sBlack%20Forest%2C%20Germany!3m2!1d48.2774862!2d8.185997!5e0!3m2!1sen!2suk!4v1737050057730!5m2!1sen!2suk" 
           width="100%" 
-          height="400" 
+          height="450" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade" 
+          aria-label="Day 3 Route Map">
         </iframe>
       </div>
       <h3><i class="fas fa-clock"></i> Drive Time</h3>
@@ -526,22 +628,22 @@
         <li>Experience Michelin-starred dining at <a href="https://www.oetkercollection.com/hotels/brenners-park-hotel-spa/" target="_blank" rel="noopener"><em>Brenners Park-Restaurant</em></a> for a refined culinary experience</li>
         <li>Alternatively, enjoy gourmet cuisine at <a href="https://www.restauranterestaurantbareiss.de/" target="_blank" rel="noopener"><em>Restaurant Bareiss</em></a> in Baiersbronn</li>
       </ul>
-
     </div>
 
     <!-- Tab Content: Day 4 -->
-    <div id="day4" class="tab-content">
+    <div id="day4" class="tab-content" role="tabpanel" aria-labelledby="day4-tab">
       <h2>Day 4: Black Forest Exploration</h2>
-      <!-- Replaced Image with Day 4 Map -->
+      <!-- Day 4 Map -->
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d604309.2069329956!2d7.8235953668169556!3d48.25744734103122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4790ec232f1791bd%3A0xdbe2bec8ae87edf1!2sBlack%20Forest!5e0!3m2!1sen!2suk!4v1737115198268!5m2!1sen!2suk" 
           width="100%" 
-          height="400" 
+          height="450" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade" 
+          aria-label="Day 4 Route Map">
         </iframe>
       </div>
       <h3><i class="fas fa-clock"></i> Drive Times</h3>
@@ -551,7 +653,7 @@
       </ul>
       <h3><i class="fas fa-water"></i> Morning</h3>
       <ul class="details-list">
-        <li><i class="fas fa-water"></i> Visit the breathtaking <strong><a href="https://www.tourism-bw.com/en/see-and-do/waterfalls/triberg-waterfalls/" target="_blank" rel="noopener">Triberg Waterfalls</a></strong>, Germany’s highest accessible falls</li>
+        <li><i class="fas fa-water"></i> Visit the breathtaking <strong><a href="https://www.visitblackforest.info/en/see-do/triberg-waterfalls/" target="_blank" rel="noopener">Triberg Waterfalls</a></strong>, Germany’s highest accessible falls</li>
         <li><i class="fas fa-clock"></i> Explore the <strong><a href="https://www.eble-uhren-park.de/" target="_blank" rel="noopener">Eble Uhren-Park</a></strong> – Home to the world’s largest cuckoo clock</li>
       </ul>
       <h3><i class="fas fa-utensils"></i> Lunch</h3>
@@ -571,22 +673,22 @@
       <ul class="details-list">
         <li>Dine at the hotel’s restaurant or explore local eateries in <a href="https://en.wikipedia.org/wiki/Titisee-Neustadt" target="_blank" rel="noopener"><strong>Titisee-Neustadt</strong></a>, savoring Black Forest trout</li>
       </ul>
-
     </div>
 
     <!-- Tab Content: Day 5 -->
-    <div id="day5" class="tab-content">
+    <div id="day5" class="tab-content" role="tabpanel" aria-labelledby="day5-tab">
       <h2>Day 5: Black Forest &rarr; Avignon</h2>
-      <!-- Replaced Image with Day 5 Map -->
+      <!-- Day 5 Map -->
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2833564.6534234295!2d3.822188327105766!3d46.08792796333336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x4790ec232f1791bd%3A0xdbe2bec8ae87edf1!2sBlack%20Forest%2C%20Germany!3m2!1d48.2774862!2d8.185997!4m5!1s0x12b5eb8739bc9d07%3A0xe6429b6efa1d7b36!2sAvignon%2C%20France!3m2!1d43.9486986!2d4.8059401!5e0!3m2!1sen!2suk!4v1737114950449!5m2!1sen!2suk" 
           width="100%" 
-          height="400" 
+          height="450" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade" 
+          aria-label="Day 5 Route Map">
         </iframe>
       </div>
       <h3><i class="fas fa-clock"></i> Drive Time</h3>
@@ -617,22 +719,22 @@
         <li><i class="fas fa-walking"></i> Stroll across the iconic <strong><a href="https://en.wikipedia.org/wiki/Pont_d%E2%80%99Avignon" target="_blank" rel="noopener">Pont d’Avignon</a></strong>, perfect for sunset photos</li>
         <li><i class="fas fa-utensils"></i> Dine at <a href="https://www.la-mirande.fr/en/restaurants-bars/lamirande-restaurant/" target="_blank" rel="noopener"><em>La Mirande’s restaurant</em></a> or a nearby Provençal bistro, enjoying regional specialties</li>
       </ul>
-
     </div>
 
     <!-- Tab Content: Day 6 -->
-    <div id="day6" class="tab-content">
+    <div id="day6" class="tab-content" role="tabpanel" aria-labelledby="day6-tab">
       <h2>Day 6: Avignon &rarr; Jávea</h2>
-      <!-- Replaced Image with Day 6 Map -->
+      <!-- Day 6 Map -->
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3067412.868226447!2d-0.5123819589989584!3d41.34104166350182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x12b5eb8739bc9d07%3A0xe6429b6efa1d7b36!2sAvignon%2C%20France!3m2!1d43.9486986!2d4.8059401!4m5!1s0x129e0f99e86a8b1d%3A0x6c7e7e5bf95e3de7!2sX%C3%A0bia%2C%2003730%2C%20Alicante%2C%20Spain!3m2!1d38.788913199999996!2d0.1660573!5e0!3m2!1sen!2suk!4v1737115045230!5m2!1sen!2suk" 
           width="100%" 
-          height="400" 
+          height="450" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade" 
+          aria-label="Day 6 Route Map">
         </iframe>
       </div>
       <h3><i class="fas fa-clock"></i> Drive Time</h3>
@@ -661,13 +763,12 @@
         <li><i class="fas fa-walking"></i> Take a leisurely walk along <strong><a href="https://www.xabia.org/en/default.asp" target="_blank" rel="noopener">Arenal Beach</a></strong>, enjoying the sunset and vibrant beachside atmosphere</li>
         <li><i class="fas fa-utensils"></i> Dine at <a href="https://www.laperladejavea.com/" target="_blank" rel="noopener"><em>La Perla de Jávea</em></a> or <a href="https://restaurante-tosca.com/" target="_blank" rel="noopener"><em>Restaurante Tosca</em></a>, known for exquisite seafood and Mediterranean specialties</li>
       </ul>
-
     </div>
 
     <!-- Tab Content: Options -->
-    <div id="options" class="tab-content">
+    <div id="options" class="tab-content" role="tabpanel" aria-labelledby="options-tab">
       <h2>Options: Flexible Itinerary</h2>
-      <img src="https://www.olea-home.com/objetos/temp/source/oleahome/olea-home-noticias_66682cf1160c8-source.jpg" alt="Travel Flexibility">
+      <img src="https://www.olea-home.com/objetos/temp/source/oleahome/olea-home-noticias_66682cf1160c8-source.jpg" alt="Travel Flexibility" style="width:100%; border-radius:10px; margin-bottom:25px;">
       <ul class="details-list">
         <li><i class="fas fa-road"></i> <strong>Daily Travel:</strong> Opt for daily travel instead of spending two nights in certain locations. This approach results in shorter drive times between destinations, allowing you to explore more places without the need for extended stays.</li>
         <li><i class="fas fa-map-marker-alt"></i> <strong>Additional Stops:</strong>
@@ -710,8 +811,8 @@
       <em>Safe travels and enjoy this exquisite journey. For further customizations, please let us know!</em>
     </p>
     <div class="social-links">
-      <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       <!-- Add more social links as needed -->
     </div>
   </footer>
@@ -725,19 +826,40 @@
       // Remove active class from all tabs and contents
       tabs.forEach(tab => {
         tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+        tab.setAttribute('tabindex', '-1');
       });
       contents.forEach(content => {
         content.classList.remove('active');
       });
 
       // Add active class to selected tab and corresponding content
-      document.querySelector(`.tab[onclick="showTabContent('${tabId}')"]`).classList.add('active');
+      const activeTab = document.querySelector(`.tab[onclick="showTabContent('${tabId}')"]`);
+      activeTab.classList.add('active');
+      activeTab.setAttribute('aria-selected', 'true');
+      activeTab.setAttribute('tabindex', '0');
       document.getElementById(tabId).classList.add('active');
     }
 
     // Initialize the first tab as active
     document.addEventListener('DOMContentLoaded', () => {
       showTabContent('overview');
+    });
+
+    // Enable keyboard navigation for tabs
+    tabs.forEach(tab => {
+      tab.addEventListener('keydown', (e) => {
+        let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+        if (e.key === 'ArrowRight') {
+          index = (index + 1) % tabs.length;
+          showTabContent(tabs[index].getAttribute('onclick').match(/'(.+)'/)[1]);
+        } else if (e.key === 'ArrowLeft') {
+          index = (index - 1 + tabs.length) % tabs.length;
+          showTabContent(tabs[index].getAttribute('onclick').match(/'(.+)'/)[1]);
+        } else if (e.key === 'Enter' || e.key === ' ') {
+          showTabContent(tab.getAttribute('onclick').match(/'(.+)'/)[1]);
+        }
+      });
     });
   </script>
 </body>
